@@ -132,9 +132,11 @@ Exemplos de retorno do serviço
 
 Após inicializar, você pode testar os endpoints principais:
 
-- **Criar pauta:** `POST /api/pautas`
-- **Abrir sessão:** `POST /api/sessoes`
-- **Votar:** `POST /api/sessoes/{id}/votos`
-- **Ver resultado:** `GET /api/sessoes/{id}/resultado`
+- **Criar pauta:** `POST /pauta`
+  - Nota: A duração de uma pauta é definida seguindo o seguinte formato de string passada no objeto do corpo da requisição:
+    - Sintaxe: `"PT<quantidade><H|M|S>"`
+    - Exemplos: 30 segundos = "PT30S", 1 minuto = "PT1M", 1 hora = "PT1H".
+- **Votar:** `POST /sessao`
+- **Ver resultado:** `GET /sessao/pauta/{id}`
 
 Consulte a documentação completa em: http://localhost:8080/swagger-ui.html
